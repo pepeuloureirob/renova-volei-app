@@ -1,1 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
 
+<h1>Cadastrar Atleta</h1>
+
+<form method="POST">
+    <label>Nome Completo</label>
+    <input type="text" name="nome" required>
+
+    <label>Data de Nascimento</label>
+    <input type="date" name="nascimento" required>
+
+    <label>Altura</label>
+    <input type="text" name="altura">
+
+    <label>Endereço</label>
+    <input type="text" name="endereco">
+
+    <label>Telefone</label>
+    <input type="text" name="telefone">
+
+    <label>Nome do Responsável</label>
+    <input type="text" name="responsavel">
+
+    <label>Telefone do Responsável</label>
+    <input type="text" name="telefone_responsavel">
+
+    <label>Escola</label>
+    <input type="text" name="escola">
+
+    <label>Clube que Treina</label>
+    <input type="text" name="clube">
+
+    <label>Possui padrão de treino?</label>
+    <select name="padrao_treino">
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+    </select>
+
+    <label>Possui padrão de jogo?</label>
+    <select name="padrao_jogo">
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+    </select>
+
+    <label>Tamanho da camisa</label>
+    <input type="text" name="camisa">
+
+    <label>Número da camisa</label>
+    <input type="text" name="numero">
+
+    <br><br>
+    <button type="submit">Salvar Atleta</button>
+</form>
+
+{% endblock %}
