@@ -1,1 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
 
+<h1>Dashboard</h1>
+
+<div class="cards">
+    {% for sub, total in contagem.items() %}
+    <div class="card">
+        <h3>{{ sub }}</h3>
+        <p>{{ total }} atletas</p>
+    </div>
+    {% endfor %}
+</div>
+
+<a href="/cadastrar_atleta" class="fab atleta">👤</a>
+<a href="/cadastrar_competicao" class="fab trofeu">🏆</a>
+
+{% endblock %}
