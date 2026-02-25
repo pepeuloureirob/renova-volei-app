@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Renova Vôlei</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
 
+<div class="sidebar">
+    <h2>🏐 Renova Vôlei</h2>
+    <a href="/">Dashboard</a>
+    <a href="/atletas">Atletas</a>
+    <a href="/competicoes">Competições</a>
+</div>
+
+<div class="main">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p style="margin-bottom:10px; color:#38bdf8;">{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
