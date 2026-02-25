@@ -1,1 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
 
+<h1>Competições</h1>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Data</th>
+        <th>Subs</th>
+        <th>Local</th>
+    </tr>
+
+    {% for comp in competicoes %}
+    <tr>
+        <td>{{ comp.nome }}</td>
+        <td>{{ comp.data }}</td>
+        <td>{{ comp.subs }}</td>
+        <td>{{ comp.local }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
