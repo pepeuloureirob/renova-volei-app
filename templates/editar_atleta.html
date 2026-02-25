@@ -1,1 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
 
+<h1>Editar Atleta</h1>
+
+<form method="POST">
+    <label>Nome Completo</label>
+    <input type="text" name="nome" value="{{ atleta.nome }}" required>
+
+    <label>Data de Nascimento</label>
+    <input type="date" name="nascimento" value="{{ atleta.nascimento }}" required>
+
+    <label>Altura</label>
+    <input type="text" name="altura" value="{{ atleta.altura }}">
+
+    <label>Endereço</label>
+    <input type="text" name="endereco" value="{{ atleta.endereco }}">
+
+    <label>Telefone</label>
+    <input type="text" name="telefone" value="{{ atleta.telefone }}">
+
+    <label>Nome do Responsável</label>
+    <input type="text" name="responsavel" value="{{ atleta.responsavel }}">
+
+    <label>Telefone do Responsável</label>
+    <input type="text" name="telefone_responsavel" value="{{ atleta.telefone_responsavel }}">
+
+    <label>Escola</label>
+    <input type="text" name="escola" value="{{ atleta.escola }}">
+
+    <label>Clube que Treina</label>
+    <input type="text" name="clube" value="{{ atleta.clube }}">
+
+    <label>Possui padrão de treino?</label>
+    <select name="padrao_treino">
+        <option {% if atleta.padrao_treino == 'Sim' %}selected{% endif %}>Sim</option>
+        <option {% if atleta.padrao_treino == 'Não' %}selected{% endif %}>Não</option>
+    </select>
+
+    <label>Possui padrão de jogo?</label>
+    <select name="padrao_jogo">
+        <option {% if atleta.padrao_jogo == 'Sim' %}selected{% endif %}>Sim</option>
+        <option {% if atleta.padrao_jogo == 'Não' %}selected{% endif %}>Não</option>
+    </select>
+
+    <label>Tamanho da camisa</label>
+    <input type="text" name="camisa" value="{{ atleta.camisa }}">
+
+    <label>Número da camisa</label>
+    <input type="text" name="numero" value="{{ atleta.numero }}">
+
+    <br><br>
+    <button type="submit">Atualizar Atleta</button>
+</form>
+
+{% endblock %}
