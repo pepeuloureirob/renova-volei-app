@@ -1,1 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
 
+<h1>Cadastrar Competição</h1>
+
+<form method="POST">
+    <label>Nome da Competição</label>
+    <input type="text" name="nome" required>
+
+    <label>Data da Competição</label>
+    <input type="date" name="data" required>
+
+    <label>Subs que irão participar</label>
+    <input type="text" name="subs" placeholder="Ex: Sub15, Sub17">
+
+    <label>Local da Competição</label>
+    <input type="text" name="local">
+
+    <br><br>
+    <button type="submit">Salvar Competição</button>
+</form>
+
+{% endblock %}
