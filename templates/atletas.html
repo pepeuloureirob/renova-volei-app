@@ -1,1 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
 
+<h1>Atletas</h1>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Sub</th>
+        <th>Ações</th>
+    </tr>
+
+    {% for atleta in atletas %}
+    <tr>
+        <td>{{ atleta.nome }}</td>
+        <td>{{ atleta.sub }}</td>
+        <td>
+            <a href="/editar_atleta/{{ atleta.id }}" class="btn">Editar</a>
+            <button onclick="abrirModal('modal{{ atleta.id }}')" class="btn-danger">Remover</button>
+
+            <div id="modal{{ atleta.id }}" class="modal">
+                <div class="modal-content">
+                    <h3>Confirmar remoção?</h3>
+                    <p>Deseja remover {{ atleta.nome }}?</p>
+
+                    <div class="modal-buttons">
+                        <a href="/remover_atleta/{{ atleta.id }}" class="btn-danger">Confirmar</a>
+                        <button onclick="fecharModal('modal{{ atleta.id }}')">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
